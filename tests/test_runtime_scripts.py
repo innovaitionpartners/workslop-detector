@@ -181,6 +181,20 @@ class RuntimeScriptTests(unittest.TestCase):
         result = self.run_validator("arbiter", payload)
         self.assertEqual(result.returncode, 0, result.stderr)
 
+    def test_arbiter_contract_rejects_identical_funny_and_serious_replies(self) -> None:
+        payload = self.valid_arbiter_payload()
+        payload["verdict"] = "NOT_WORKSLOP_NEEDS_EDIT"
+        payload["reader_burden"] = {
+            "rating": "MODERATE",
+            "evidence": ["Thirty-five percent is removable."],
+        }
+        payload["recommended_action"] = "REQUEST_COMPRESSION"
+        payload["funny_reply"] = "Please shorten this before sending."
+        payload["serious_reply"] = "Please shorten this before sending."
+        result = self.run_validator("arbiter", payload)
+        self.assertEqual(result.returncode, 3)
+        self.assertIn("funny_reply must differ from serious_reply", result.stderr)
+
 
 if __name__ == "__main__":
     unittest.main()

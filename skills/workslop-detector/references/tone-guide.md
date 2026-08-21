@@ -2,7 +2,7 @@
 
 ## Funny mode — default
 
-Use dry, brief, evidence-led humor. The joke should sharpen the diagnosis, not replace it.
+Use dry, brief, evidence-led humor. The joke should sharpen the diagnosis, not replace it. The draft reply itself must be visibly funny; a funny diagnosis followed by an ordinary professional email fails funny mode.
 
 Good shapes:
 
@@ -14,12 +14,32 @@ Good shapes:
 
 Rules:
 
-- Use at most one joke in the diagnosis and one light line in the reply.
+- Use at most one joke in the diagnosis and one artifact-specific comic turn in the reply.
 - Prefer counts and observable contradictions over generic snark.
-- Avoid emojis, meme slang, theatrical outrage, and claims about who wrote the document.
+- Short, familiar reactions such as `Seriously, bruh?` or `Be so for real.` are allowed when they fit the user's voice. Use one, not a stack.
+- Avoid emojis, obscure meme slang, theatrical outrage, and claims about who wrote the document.
 - Roast the document, never the sender.
 - Keep the draft reply safe to send to a colleague.
 - Use ordinary workplace language. Internal rubric terms are for scoring only.
+
+Funny-mode acceptance test:
+
+1. The reply opens with or contains one comic turn tied to a real receipt from this artifact.
+2. The comic turn would sound out of place in the serious reply. If it would not, the reply is not funny enough.
+3. After the joke, the reply names the minimum concrete revision needed.
+4. Removing the joke leaves a useful, sendable request.
+
+Bad contrast:
+
+- Funny: `Please clarify whether this is a 90-day or six-month pilot and add the requested evidence.`
+- Serious: `Please clarify the pilot duration and add the requested evidence.`
+
+The first version is not funny; it is merely more specific.
+
+Good contrast:
+
+- Funny: `Seriously, bruh? This pilot is 90 days in one sentence and six months in the next. Pick a timeline, then rebuild the recommendation around our Q2 utilization, SLA, and survey data, with the scope, metrics, risks, checkpoint, and a clear go or no-go. And please remove the offer to make slides; the memo is not its own chatbot.`
+- Serious: `Please resolve the conflicting pilot durations and rebuild the recommendation around our Q2 utilization, SLA, and survey data. Include the scope, metrics, risks, checkpoint, and a clear go or no-go, and remove the closing presentation offer.`
 
 ## Plain-language boundary
 
@@ -50,7 +70,7 @@ Do not offer to rewrite the document for the recipient.
 
 ## Funny draft-reply bank
 
-Use these as patterns, not canned text. Preserve the document's real nouns, evidence, decisions, and requested action. Select no more than one joke and make the revision request concrete.
+Use these as patterns, not canned text. Preserve the document's real nouns, evidence, decisions, and requested action. Select no more than one joke and make the revision request concrete. A pattern must be customized enough that its joke could not be pasted onto an unrelated document.
 
 ### Request compression
 
@@ -69,6 +89,9 @@ Use these as patterns, not canned text. Preserve the document's real nouns, evid
 
 ### Return for revision
 
+- `Seriously, bruh? The document recommends [duration A] and [duration B]. Pick one, show the evidence that supports it, and tell us exactly what decision you need. [Remove any confirmed drafting residue.]`
+- `Be so for real. This asks the reader to verify the numbers, reconcile the plan, and make the recommendation. Please do those three things before sending it back.`
+- `Did the memo write this memo? Please remove the chatbot leftovers, resolve the conflicting recommendations, and rebuild it around the facts the assignment actually requested.`
 - `The reader has been assigned the thinking. Please choose one option, show us the facts that support it, name the main downside, and tell us who does what next.`
 - `The formatting is ready for work; the decision is still in draft mode. Please revise with the actual call, the facts that support it, and what you need the recipient to do.`
 - `Several strategic pillars entered the document; none volunteered to carry a decision. Please return with one or two concrete bets, owners, timing, and what will not be pursued.`
