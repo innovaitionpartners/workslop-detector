@@ -14,7 +14,7 @@ from scripts import build_packages
 
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = "0.1.0"
+VERSION = "0.1.1"
 EXPECTED_RUNTIME_FILES = {
     "SKILL.md",
     "agents/arbiter-prompt.md",
@@ -101,11 +101,11 @@ class ArchiveTests(unittest.TestCase):
             agent_path, claude_path = build_packages.build_archives(ROOT, Path(tmp))
             self.assertEqual(
                 agent_path.name,
-                "workslop-detector-agent-plugin-0.1.0.zip",
+                "workslop-detector-agent-plugin-0.1.1.zip",
             )
             self.assertEqual(
                 claude_path.name,
-                "workslop-detector-claude-plugin-0.1.0.zip",
+                "workslop-detector-claude-plugin-0.1.1.zip",
             )
             runtime = {
                 f"skills/workslop-detector/{name}"
@@ -184,7 +184,7 @@ class PackageRejectionTests(unittest.TestCase):
             root = self.copy_repo(Path(tmp))
             path = root / ".claude-plugin/plugin.json"
             manifest = json.loads(path.read_text(encoding="utf-8"))
-            manifest["version"] = "0.1.1"
+            manifest["version"] = "0.1.2"
             path.write_text(json.dumps(manifest), encoding="utf-8")
             with self.assertRaises(build_packages.PackageError):
                 build_packages.build_archives(root, Path(tmp) / "out")
@@ -241,6 +241,17 @@ class PublicDocumentationTests(unittest.TestCase):
             "draft",
         ):
             self.assertIn(phrase, text)
+
+    def test_funny_mode_requires_a_funny_draft_reply(self) -> None:
+        tone = (ROOT / "skills/workslop-detector/references/tone-guide.md").read_text(
+            encoding="utf-8"
+        )
+        arbiter = (ROOT / "skills/workslop-detector/agents/arbiter-prompt.md").read_text(
+            encoding="utf-8"
+        )
+        self.assertIn("draft reply itself must be visibly funny", tone)
+        self.assertIn("Seriously, bruh?", tone)
+        self.assertIn("one unmistakable comic turn", arbiter)
 
     def test_packageable_text_has_no_private_markers(self) -> None:
         _, files = build_packages.validate_source_tree(ROOT)

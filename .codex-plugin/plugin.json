@@ -1,6 +1,6 @@
 {
   "name": "workslop-detector",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Detects internal work that offloads thinking onto the reader.",
   "author": {
     "name": "InnovAItion Partners",
