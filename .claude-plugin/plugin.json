@@ -1,0 +1,19 @@
+{
+  "name": "workslop-detector",
+  "version": "0.1.0",
+  "description": "Detects internal work that offloads thinking onto the reader.",
+  "author": {
+    "name": "InnovAItion Partners",
+    "url": "https://github.com/innovaitionpartners"
+  },
+  "homepage": "https://github.com/innovaitionpartners/workslop-detector",
+  "repository": "https://github.com/innovaitionpartners/workslop-detector",
+  "license": "MIT",
+  "keywords": [
+    "workslop",
+    "document-review",
+    "human-delta",
+    "reader-burden"
+  ],
+  "skills": "./skills/"
+}

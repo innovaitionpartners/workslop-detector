@@ -1,0 +1,37 @@
+{
+  "name": "workslop-detector",
+  "version": "0.1.0",
+  "description": "Detects internal work that offloads thinking onto the reader.",
+  "author": {
+    "name": "InnovAItion Partners",
+    "url": "https://github.com/innovaitionpartners"
+  },
+  "homepage": "https://github.com/innovaitionpartners/workslop-detector",
+  "repository": "https://github.com/innovaitionpartners/workslop-detector",
+  "license": "MIT",
+  "keywords": [
+    "workslop",
+    "document-review",
+    "human-delta",
+    "reader-burden"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Workslop Detector",
+    "shortDescription": "Find the work someone left for the reader.",
+    "longDescription": "Compares an internal document with blinded responses to the same assignment, tests cold-reader burden, and drafts a funny or serious reply.",
+    "developerName": "InnovAItion Partners",
+    "category": "Productivity",
+    "capabilities": [
+      "Document analysis",
+      "Parallel review",
+      "Draft responses"
+    ],
+    "websiteURL": "https://github.com/innovaitionpartners/workslop-detector",
+    "defaultPrompt": [
+      "Check this internal document for workslop.",
+      "What human judgment does this add beyond the assignment?",
+      "Give me a funny and a serious reply to send back."
+    ]
+  }
+}
