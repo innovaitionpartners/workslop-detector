@@ -96,6 +96,8 @@ def validate_source_tree(root: Path) -> tuple[str, list[Path]]:
             raise PackageError(
                 f"Symlinks are not allowed: {(RUNTIME_ROOT / relative).as_posix()}"
             )
+        if "__pycache__" in relative.parts or relative.name == ".DS_Store":
+            continue
         if path.is_file():
             actual_runtime.add(relative)
     if actual_runtime != RUNTIME_FILES:

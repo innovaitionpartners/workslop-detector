@@ -144,6 +144,30 @@ class ArchiveTests(unittest.TestCase):
                 [self.digest(path) for path in second_paths],
             )
 
+    def test_ignores_transient_python_cache_without_packaging_it(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp) / "source"
+            shutil.copytree(
+                ROOT,
+                root,
+                ignore=shutil.ignore_patterns(".git", "dist", "__pycache__"),
+            )
+            cache = root / "skills/workslop-detector/scripts/__pycache__"
+            cache.mkdir()
+            (cache / "scanner.cpython-314.pyc").write_bytes(b"generated")
+            agent_path, claude_path = build_packages.build_archives(
+                root,
+                Path(tmp) / "out",
+            )
+            for path in (agent_path, claude_path):
+                with zipfile.ZipFile(path) as archive:
+                    self.assertFalse(
+                        any(
+                            "__pycache__" in name or name.endswith(".pyc")
+                            for name in archive.namelist()
+                        )
+                    )
+
 
 class PackageRejectionTests(unittest.TestCase):
     def copy_repo(self, parent: Path) -> Path:
