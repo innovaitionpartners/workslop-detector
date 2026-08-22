@@ -112,7 +112,6 @@ Cowork is the Claude surface for the full subagent panel. Claude chat can load b
 
 - Workslop Detector has no hosted service, account system, database, telemetry, or external connector.
 - Your selected AI host processes the assignment, document, and panel outputs under that host’s terms and workspace controls.
-- Do not submit sensitive internal material unless your organization has approved the host for it.
 - The plugin drafts replies only. It does not send messages or modify the submitted document.
 - The trust check does not browse or externally fact-check claims.
 
