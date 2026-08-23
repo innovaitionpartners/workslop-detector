@@ -1,12 +1,14 @@
 # Workslop Detector
 
-Workslop Detector checks whether an internal document contains useful human judgment or merely hands the real thinking to its reader.
+Workslop Detector checks whether an internal document contains any human judgment or is a bunch of AI-generated junk with minimal refinement.
 
-It is deliberately a little funny. The evidence is not.
+It is deliberately a little silly.
+
+Disclaimer: Do not take as proof of AI generation. You *can* take it as proof of lazy work.
 
 ## What is workslop?
 
-Workslop is a plan, memo, strategy, analysis, brief, or other piece of shared “thinking” that looks finished but adds little beyond the obvious AI response—or leaves the recipient to compress, verify, prioritize, and decide what the sender was supposed to handle.
+Workslop is a plan, memo, strategy, analysis, brief, or other internal document that adds little beyond the obvious AI response—or leaves the job of distillation to the recipient.
 
 Length and AI-ish prose are not enough to convict. A long document may contain excellent work. A polished two-paragraph note may contain none.
 
