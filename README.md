@@ -42,7 +42,7 @@ Without both, the counterfactual comparison is inconclusive. The detector can st
 
 ## Funny mode and serious mode
 
-Funny mode is the default. It uses dry, screenshot-worthy language while roasting the artifact and the burden it creates—not the sender.
+Funny mode is the default. It uses dry, screenshot-worthy language while roasting the artifact and the burden it creates.
 
 Serious mode returns the same judgment and evidence in neutral workplace language. Say “make it serious” or request a professional or HR-safe response.
 
