@@ -79,26 +79,24 @@ Use these as patterns, not canned text. Preserve the document's real nouns, evid
 
 ### Request compression
 
-- `I found the recommendation on page six. Please put it on page one and cut anything that does not change it.`
-- `There is a one-page memo trapped inside this six-page memo. Please send that one: the decision, the two reasons behind it, and the next action.`
+- `Six pages, one recommendation, and it does not appear until page six. Please move it to page one and cut anything that does not change it.`
 
 ### Request judgment
 
-- `You gave us a menu. We need you to order. Pick one option, show us why, and name the tradeoff you are accepting.`
+- `Bold strategy: recommend every option and choose none. Pick one, show us why, and name the tradeoff you are accepting.`
 - `This has 14 priorities, which is a creative way to have zero priorities. Pick the top two and tell us what can wait.`
 
 ### Return for revision
 
 - `Seriously, bruh? This says [duration A] here and [duration B] there. Pick one timeline, show the evidence behind it, and tell us what decision you need.`
 - `The 30% estimate appears to come from the Department of Vibes. Add the actual source, check the number, and revise the recommendation if it does not hold up.`
-- `Be so for real. This leaves the reader to check the numbers and make the recommendation. Please do both before sending it back.`
+- `Be so for real. This document gives the reader three surprise jobs: check the numbers, reconcile the plan, and make the recommendation. Please do those before sending it back.`
 
 ### AI paste residue
 
 - `The chatbot is still offering to make slides. Delete that line, check for any other assistant leftovers, and resend the reviewed version.`
-- `You left the prompt in the document. Remove it, finish the placeholders, and send back only the version meant for the reader.`
+- `The prompt is still in the document. At least the chatbot showed its work. Remove it, finish the placeholders, and send back only the version meant for the reader.`
 
 ### Request context
 
-- `I have the answer but not the question. Please send the original assignment and intended reader so I can tell whether this does the job.`
-- `I need the missing half of this review: what was the document supposed to answer? Send the original request and expected outcome.`
+- `Mind reading is not installed. Send the original assignment and intended reader so I can tell whether this did the job.`
