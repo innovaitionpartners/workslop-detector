@@ -4,6 +4,8 @@
 
 Use dry, brief, evidence-led humor. The joke should sharpen the diagnosis, not replace it. The draft reply itself must be visibly funny; a funny diagnosis followed by an ordinary professional email fails funny mode.
 
+The joke must make sense immediately. If the reader has to decode a metaphor before understanding the problem, rewrite it. Prefer a familiar reaction, an obvious contradiction, a revealing count, or one simple joke about a specific unsupported claim. Then state the requested fix in plain language.
+
 Good shapes:
 
 - `A human was here.`
@@ -17,6 +19,8 @@ Rules:
 - Use at most one joke in the diagnosis and one artifact-specific comic turn in the reply.
 - Prefer counts and observable contradictions over generic snark.
 - Short, familiar reactions such as `Seriously, bruh?` or `Be so for real.` are allowed when they fit the user's voice. Use one, not a stack.
+- Keep the joke to one idea. Do not stack metaphors, puns, or comic images.
+- Avoid clever metaphors that make the reader translate the joke before acting on the request.
 - Avoid emojis, obscure meme slang, theatrical outrage, and claims about who wrote the document.
 - Roast the document, never the sender.
 - Keep the draft reply safe to send to a colleague.
@@ -28,6 +32,7 @@ Funny-mode acceptance test:
 2. The comic turn would sound out of place in the serious reply. If it would not, the reply is not funny enough.
 3. After the joke, the reply names the minimum concrete revision needed.
 4. Removing the joke leaves a useful, sendable request.
+5. A colleague understands both the joke and the request on the first read.
 
 Bad contrast:
 
@@ -38,7 +43,7 @@ The first version is not funny; it is merely more specific.
 
 Good contrast:
 
-- Funny: `Seriously, bruh? This pilot is 90 days in one sentence and six months in the next. Pick a timeline, then rebuild the recommendation around our Q2 utilization, SLA, and survey data, with the scope, metrics, risks, checkpoint, and a clear go or no-go. And please remove the offer to make slides; the memo is not its own chatbot.`
+- Funny: `Seriously, bruh? Is this a 90-day pilot or a six-month pilot? The memo says both. Pick one timeline, use our Q2 utilization, SLA, and survey data, and remove the chatbot's offer to make slides.`
 - Serious: `Please resolve the conflicting pilot durations and rebuild the recommendation around our Q2 utilization, SLA, and survey data. Include the scope, metrics, risks, checkpoint, and a clear go or no-go, and remove the closing presentation offer.`
 
 ## Plain-language boundary
@@ -74,39 +79,26 @@ Use these as patterns, not canned text. Preserve the document's real nouns, evid
 
 ### Request compression
 
-- `There is a useful memo inside this memo. Please move the recommendation and next action to the top, then cut the background that does not change either one.`
-- `The answer arrived, but it brought an entourage. Please reduce this to the decision, the two reasons supporting it, and the action required from the reader.`
-- `The signal is good; it is currently traveling with several carry-on bags. Please keep the evidence that affects the recommendation and remove the rest.`
-- `This has earned a page, not a small republic. Please lead with the proposed decision and compress the supporting material to the facts leadership actually needs.`
+- `I found the recommendation on page six. Please put it on page one and cut anything that does not change it.`
+- `There is a one-page memo trapped inside this six-page memo. Please send that one: the decision, the two reasons behind it, and the next action.`
 
 ### Request judgment
 
-- `The options are all present and accounted for; the recommendation appears to have missed the meeting. Please tell us which option you support and what tradeoff you are accepting.`
-- `This gives us a menu when the assignment called for an order. Please name your recommendation, the evidence behind it, and the condition that would change your mind.`
-- `The facts are here, but they have not yet been introduced to a point of view. Please add your conclusion and explain why it beats the strongest alternative.`
-- `The document has successfully preserved every possibility, including the possibility of making no decision. Please choose a path and identify what we should stop, start, or fund.`
-- `This is a capable tour of the territory. We still need a guide who points somewhere. Please state the priority, owner, and success threshold you recommend.`
+- `You gave us a menu. We need you to order. Pick one option, show us why, and name the tradeoff you are accepting.`
+- `This has 14 priorities, which is a creative way to have zero priorities. Pick the top two and tell us what can wait.`
 
 ### Return for revision
 
-- `Seriously, bruh? The document recommends [duration A] and [duration B]. Pick one, show the evidence that supports it, and tell us exactly what decision you need. [Remove any confirmed drafting residue.]`
-- `Be so for real. This asks the reader to verify the numbers, reconcile the plan, and make the recommendation. Please do those three things before sending it back.`
-- `Did the memo write this memo? Please remove the chatbot leftovers, resolve the conflicting recommendations, and rebuild it around the facts the assignment actually requested.`
-- `The reader has been assigned the thinking. Please choose one option, show us the facts that support it, name the main downside, and tell us who does what next.`
-- `The formatting is ready for work; the decision is still in draft mode. Please revise with the actual call, the facts that support it, and what you need the recipient to do.`
-- `Several strategic pillars entered the document; none volunteered to carry a decision. Please return with one or two concrete bets, owners, timing, and what will not be pursued.`
-- `This currently transfers the work from the sender's screen to the reader's afternoon. Please compare the options, check the important claims, and tell us which one you recommend before resending.`
-- `The document covers the waterfront and leaves the recipient holding the mop. Please narrow it to the problem, your judgment, the supporting evidence, and the requested decision.`
+- `Seriously, bruh? This says [duration A] here and [duration B] there. Pick one timeline, show the evidence behind it, and tell us what decision you need.`
+- `The 30% estimate appears to come from the Department of Vibes. Add the actual source, check the number, and revise the recommendation if it does not hold up.`
+- `Be so for real. This leaves the reader to check the numbers and make the recommendation. Please do both before sending it back.`
 
 ### AI paste residue
 
-- `The chatbot packaging is still attached. Please remove the assistant offer at the end, check the document for any other drafting residue, and resend the reviewed version.`
-- `A little assembly language made it into the finished product. Please remove the prompt fragment, verify the surrounding section, and confirm the document has had a human final pass.`
-- `The draft has left its backstage directions onstage. Please remove the editing instruction, resolve any unfinished fields, and resend only the reader-facing document.`
-- `This may contain useful work, but it arrived with the scaffolding still up. Please clear the model disclaimer and unresolved placeholders, then verify that every remaining sentence belongs in the final.`
+- `The chatbot is still offering to make slides. Delete that line, check for any other assistant leftovers, and resend the reviewed version.`
+- `You left the prompt in the document. Remove it, finish the placeholders, and send back only the version meant for the reader.`
 
 ### Request context
 
-- `I have the answer but not the question, which makes this less a review and more an archaeological dig. Please send the original assignment and intended reader so I can assess whether this does the job.`
-- `This document may be exactly right for a request I cannot see. Please share the original brief, required decision, and audience before we put it on trial.`
-- `Before declaring this work or workslop, I need the missing half of the experiment. Please send the assignment, source material, and expected outcome.`
+- `I have the answer but not the question. Please send the original assignment and intended reader so I can tell whether this does the job.`
+- `I need the missing half of this review: what was the document supposed to answer? Send the original request and expected outcome.`

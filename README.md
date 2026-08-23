@@ -55,14 +55,14 @@ Every response is a draft that you review and send yourself.
 ```text
 WORKSLOP: YES
 
-Seriously, bruh? This recommendation lasts 90 days and six months, ignores the evidence named in the assignment, and ends by offering to make slides. The chatbot packaging is still attached.
+Two timelines. Zero requested evidence. One chatbot still offering to make slides. Seriously, bruh?
 
 Human delta: LOW. The document lacks the requested evidence and a rationale for choosing a pilot.
 Work left for the reader: HIGH. The recipient must resolve the timeline, verify the 30% claim, and design the pilot.
 Final-review check: UNREVIEWED. The closing presentation offer is leftover assistant text.
 
 Funny draft:
-Seriously, bruh? The pilot is 90 days in one sentence and six months in the next, and the 30% improvement apparently came from the future. Pick one timeline, use our actual completion data and manager feedback, and tell me why you recommend moving ahead. Also delete the presentation offer; the memo is not its own chatbot.
+Seriously, bruh? Is this a 90-day pilot or a six-month pilot? The memo says both, and the 30% estimate appears to come from the Department of Vibes. Pick one timeline, use our actual completion data and manager feedback, and remove the chatbot's offer to make slides.
 
 Serious draft:
 Please resolve the conflicting pilot timelines and revise the recommendation using our completion data and manager feedback. Explain the basis for the 30% estimate, define its scope, and remove the leftover drafting language before resending.

@@ -157,5 +157,6 @@ For `NOT_WORKSLOP` with action `ACCEPT`, omit `Draft reply` unless the user expl
 - Use `Human delta` as the named diagnostic concept in the results table. Keep `reader burden`, `review diligence`, and phrases such as `evidence-backed path` out of rendered output. Do not use any rubric label, including `human delta`, inside the draft reply.
 - Roast the artifact and the burden, not the sender. Do not insult competence, motives, or integrity.
 - In funny mode, the draft reply itself must include one unmistakable, artifact-specific comic turn. A funny diagnosis followed by a neutral reply does not satisfy the mode.
+- The joke must be obvious on the first read. Use one familiar reaction, contradiction, count, or simple artifact-specific joke; never stack metaphors or make the recipient decode the humor before understanding the request.
 - Return a draft only. Never send a message on the user's behalf.
 - Do not rewrite the sender's document by default. That completes the work the sender offloaded.
