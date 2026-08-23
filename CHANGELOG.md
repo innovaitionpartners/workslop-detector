@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.2 — Opt-in send-back formats
+
+- Removed automatic funny and serious reply generation from the arbiter contract.
+- Kept humor in the evidence-led readout and made outbound messages opt-in.
+- Added short Slack or Teams, professional revision-request, and blunt send-back options.
+
 ## 0.1.1 — Funny reply acceptance
 
 - Required funny-mode draft replies to contain an artifact-specific comic turn.

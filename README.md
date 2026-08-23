@@ -38,7 +38,7 @@ Funny mode is the default. It uses dry, screenshot-worthy language while roastin
 
 Serious mode returns the same judgment and evidence in neutral workplace language. Say “make it serious” or request a professional or HR-safe response.
 
-Every response is a draft that you review and send yourself.
+The readout does not automatically draft a message to the sender. After the verdict, you can ask for a short Slack or Teams reply, a professional revision request, or a blunt “Seriously, bruh?” version.
 
 ## Example
 
@@ -61,11 +61,11 @@ Human delta: LOW. The document lacks the requested evidence and a rationale for 
 Work left for the reader: HIGH. The recipient must resolve the timeline, verify the 30% claim, and design the pilot.
 Final-review check: UNREVIEWED. The closing presentation offer is leftover assistant text.
 
-Funny draft:
-Seriously, bruh? Is this a 90-day pilot or a six-month pilot? The memo says both, and the 30% estimate appears to come from the Department of Vibes. Pick one timeline, use our actual completion data and manager feedback, and remove the chatbot's offer to make slides.
+Want a version you can send back?
 
-Serious draft:
-Please resolve the conflicting pilot timelines and revise the recommendation using our completion data and manager feedback. Explain the basis for the 30% estimate, define its scope, and remove the leftover drafting language before resending.
+- a short Slack or Teams reply
+- a professional revision request
+- a blunt “Seriously, bruh?” version
 ```
 
 ## Install the Agent Plugin package
@@ -103,7 +103,7 @@ Cowork is the Claude surface for the full subagent panel. Claude chat can load b
 ## Privacy and safety
 
 - Workslop Detector relies entirely on your selected AI host, which processes the assignment, document, and reviewer outputs under its terms and workspace controls.
-- The plugin produces reply drafts for you to review and send yourself, leaving the submitted document unchanged.
+- The plugin generates an outbound draft only when you request one. It never sends messages or changes the submitted document.
 - The trust check does not browse or externally fact-check claims.
 
 ## Limitations

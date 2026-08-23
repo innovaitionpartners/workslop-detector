@@ -105,8 +105,6 @@ class RuntimeScriptTests(unittest.TestCase):
             "funny_diagnosis": "A human was here.",
             "serious_diagnosis": "The document is decision-ready.",
             "recommended_action": "ACCEPT",
-            "funny_reply": "",
-            "serious_reply": "",
             "limitations": [],
         }
 
@@ -129,7 +127,7 @@ class RuntimeScriptTests(unittest.TestCase):
         self.assertEqual(result.returncode, 3)
         self.assertIn("recommended_action must be ACCEPT", result.stderr)
 
-    def test_arbiter_contract_rejects_internal_jargon_in_reply(self) -> None:
+    def test_arbiter_contract_rejects_internal_jargon_in_diagnosis(self) -> None:
         payload = self.valid_arbiter_payload()
         payload["serious_diagnosis"] = "This document has low human delta."
         result = self.run_validator("arbiter", payload)
@@ -176,24 +174,15 @@ class RuntimeScriptTests(unittest.TestCase):
             "evidence": ["Thirty-five percent is removable."],
         }
         payload["recommended_action"] = "REQUEST_COMPRESSION"
-        payload["funny_reply"] = "Please tighten this before sending."
-        payload["serious_reply"] = "Please shorten this before sending."
         result = self.run_validator("arbiter", payload)
         self.assertEqual(result.returncode, 0, result.stderr)
 
-    def test_arbiter_contract_rejects_identical_funny_and_serious_replies(self) -> None:
+    def test_arbiter_contract_rejects_legacy_reply_fields(self) -> None:
         payload = self.valid_arbiter_payload()
-        payload["verdict"] = "NOT_WORKSLOP_NEEDS_EDIT"
-        payload["reader_burden"] = {
-            "rating": "MODERATE",
-            "evidence": ["Thirty-five percent is removable."],
-        }
-        payload["recommended_action"] = "REQUEST_COMPRESSION"
         payload["funny_reply"] = "Please shorten this before sending."
-        payload["serious_reply"] = "Please shorten this before sending."
         result = self.run_validator("arbiter", payload)
         self.assertEqual(result.returncode, 3)
-        self.assertIn("funny_reply must differ from serious_reply", result.stderr)
+        self.assertIn("keys mismatch", result.stderr)
 
 
 if __name__ == "__main__":
