@@ -4,32 +4,24 @@ Workslop Detector checks whether an internal document contains any human judgmen
 
 It is deliberately a little silly.
 
-Disclaimer: Do not take as proof of AI generation. You *can* take it as proof of lazy work.
+Disclaimer: Workslop Detector evaluates the document’s usefulness and the work it leaves for the reader. AI authorship is outside its scope.
 
 ## What is workslop?
 
-Workslop is a plan, memo, strategy, analysis, brief, or other internal document that adds little beyond the obvious AI response—or leaves the job of distillation to the recipient.
+Workslop is a plan, memo, strategy, analysis, brief, or other internal document that adds little beyond the obvious AI response or leaves the job of distillation to the recipient.
 
-Length and AI-ish prose are not enough to convict. A long document may contain excellent work. A polished two-paragraph note may contain none.
+Length and AI-ish prose are not enough to convict. A long document may contain excellent work. A tidy two-paragraph note may contain none.
 
 ## How the check works
 
-The full review uses an isolated panel:
+Workslop Detector compares the document with the request it was supposed to answer and checks four things:
 
-1. Two blinded baseline agents answer the original assignment without seeing the submitted document.
-2. A cold reader reviews the document for clarity, usable length, unsupported claims, contradictions, and work left for the recipient.
-3. A fresh arbiter compares the document with the blinded baselines and applies a binding verdict matrix.
-4. Deterministic scripts scan for leftover AI drafting residue and validate every agent response.
+- **What did the person add?** Two fresh AI reviewers answer the original request without seeing the document. Their answers show what a generic response could produce. The detector then looks for facts, constraints, tradeoffs, priorities, or judgment beyond that starting point. This is the **human delta**.
+- **How much work is left for the reader?** A separate reader checks whether the document is clear, a sensible length, internally consistent, and ready to use.
+- **Was it reviewed before sharing?** A scan catches prompt fragments, assistant offers, editing instructions, role labels, and unfinished placeholders.
+- **Can its claims be trusted?** The detector flags important numbers with no visible source and contradictions the recipient must resolve. An internal label such as “June employee survey” or “finance forecast” is enough; formal citations are not required.
 
-The core tests are:
-
-- **Human delta:** What facts, evidence, constraints, tradeoffs, prioritization, exclusions, or accountable judgment did the person add beyond the obvious response to the assignment?
-- **Reader burden:** Can the intended recipient understand and use the document after one normal read, or must they perform disproportionate compression, verification, interpretation, or decision work?
-
-Two diagnostic checks sit alongside the verdict:
-
-- **AI residue:** Direct assistant offers, prompt fragments, model disclaimers, role labels, editing instructions, and unresolved placeholders left in the shared document. This is evidence of poor final review, not proof of authorship.
-- **Trust check:** Consequential unsourced data and contradictions that the recipient must verify or reconcile. An internal source label such as “June employee survey” or “finance forecast” counts as provenance; formal citations are not required.
+A final reviewer combines the findings and returns the verdict. Length and AI-sounding prose serve only as context.
 
 ## Required inputs
 
@@ -46,7 +38,7 @@ Funny mode is the default. It uses dry, screenshot-worthy language while roastin
 
 Serious mode returns the same judgment and evidence in neutral workplace language. Say “make it serious” or request a professional or HR-safe response.
 
-Every response is a draft. The plugin never sends a message for you.
+Every response is a draft that you review and send yourself.
 
 ## Example
 
@@ -56,24 +48,24 @@ Every response is a draft. The plugin never sends a message for you.
 
 **Submitted document**
 
-> We should consider a strategic, phased approach that aligns stakeholders around scalable best practices. Completion could improve by 30%. Would you like me to turn this into slides?
+> We recommend a 90-day pilot over the next six months. Based on industry best practices, completion could improve by 30%. Would you like me to turn this into slides?
 
 **Condensed result**
 
 ```text
 WORKSLOP: YES
 
-The memo arrived wearing a strategy costume and left the decision at your desk.
+Seriously, bruh? This recommendation lasts 90 days and six months, ignores the evidence named in the assignment, and ends by offering to make slides. The chatbot packaging is still attached.
 
-Human delta: LOW — it adds no completion data, manager feedback, pilot boundary, tradeoff, or accountable recommendation beyond the assignment.
-Work left for the reader: HIGH — the recipient must verify the 30% claim and design the pilot.
-Final-review check: UNREVIEWED — “Would you like me to turn this into slides?” appears to be leftover assistant text.
+Human delta: LOW. The document lacks the requested evidence and a rationale for choosing a pilot.
+Work left for the reader: HIGH. The recipient must resolve the timeline, verify the 30% claim, and design the pilot.
+Final-review check: UNREVIEWED. The closing presentation offer is leftover assistant text.
 
 Funny draft:
-Thanks—this gives me the category of answer, but not your answer. Please send back your recommendation, the completion data and manager feedback behind it, and the pilot you would actually run. The offer to make slides can retire with honors.
+Seriously, bruh? The pilot is 90 days in one sentence and six months in the next, and the 30% improvement apparently came from the future. Pick one timeline, use our actual completion data and manager feedback, and tell me why you recommend moving ahead. Also delete the presentation offer; the memo is not its own chatbot.
 
 Serious draft:
-Please revise this with your recommendation, the completion data and manager feedback supporting it, and a defined pilot scope. Also remove the leftover drafting language before resending.
+Please resolve the conflicting pilot timelines and revise the recommendation using our completion data and manager feedback. Explain the basis for the 30% estimate, define its scope, and remove the leftover drafting language before resending.
 ```
 
 ## Install the Agent Plugin package
@@ -110,9 +102,8 @@ Cowork is the Claude surface for the full subagent panel. Claude chat can load b
 
 ## Privacy and safety
 
-- Workslop Detector has no hosted service, account system, database, telemetry, or external connector.
-- Your selected AI host processes the assignment, document, and panel outputs under that host’s terms and workspace controls.
-- The plugin drafts replies only. It does not send messages or modify the submitted document.
+- Workslop Detector relies entirely on your selected AI host, which processes the assignment, document, and reviewer outputs under its terms and workspace controls.
+- The plugin produces reply drafts for you to review and send yourself, leaving the submitted document unchanged.
 - The trust check does not browse or externally fact-check claims.
 
 ## Limitations
@@ -120,7 +111,7 @@ Cowork is the Claude surface for the full subagent panel. Claude chat can load b
 - Workslop Detector **cannot prove AI authorship**. It judges the document’s value, diligence, and burden relative to its assignment.
 - A consequential claim without visible provenance may need support; that does not make the claim false.
 - The full verdict requires native isolated-agent delegation. Unsupported hosts receive an `INCONCLUSIVE` counterfactual result and a limited review.
-- Results are decision support, not a substitute for workplace judgment or a basis for disciplinary action by themselves.
+- Use these results as decision support. Workplace judgment and independent evidence should determine any disciplinary action.
 
 ## License
 

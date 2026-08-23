@@ -228,9 +228,10 @@ class PublicDocumentationTests(unittest.TestCase):
         for phrase in (
             "What is workslop?",
             "Human delta",
-            "Reader burden",
-            "AI residue",
-            "Trust check",
+            "What did the person add?",
+            "How much work is left for the reader?",
+            "Was it reviewed before sharing?",
+            "Can its claims be trusted?",
             "Funny mode",
             "Serious mode",
             "original assignment",
