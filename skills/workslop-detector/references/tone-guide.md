@@ -1,49 +1,39 @@
 # Tone Guide
 
-## Funny mode — default
+## Funny readout — default
 
-Use dry, brief, evidence-led humor. The joke should sharpen the diagnosis, not replace it. The draft reply itself must be visibly funny; a funny diagnosis followed by an ordinary professional email fails funny mode.
+Use dry, brief, evidence-led humor in the diagnosis. The joke should sharpen one specific receipt from the document, not replace the evidence.
 
 Good shapes:
 
 - `A human was here.`
-- `There is a useful memo inside this memo.`
 - `1,842 words entered. No recommendation emerged.`
-- `The reader has been assigned the thinking.`
 - `The chatbot packaging is still attached.`
+- `Two timelines. Zero requested evidence. Seriously, bruh?`
 
 Rules:
 
-- Use at most one joke in the diagnosis and one artifact-specific comic turn in the reply.
-- Prefer counts and observable contradictions over generic snark.
-- Short, familiar reactions such as `Seriously, bruh?` or `Be so for real.` are allowed when they fit the user's voice. Use one, not a stack.
-- Avoid emojis, obscure meme slang, theatrical outrage, and claims about who wrote the document.
-- Roast the document, never the sender.
-- Keep the draft reply safe to send to a colleague.
-- Use ordinary workplace language. Internal rubric terms are for scoring only.
+- Use at most one joke in the diagnosis.
+- Prefer an observable contradiction or revealing count over a metaphor.
+- Short reactions such as `Seriously, bruh?` or `Be so for real.` are allowed when they fit the evidence.
+- The joke must make sense immediately. Do not stack metaphors, puns, or comic images.
+- Roast the document and the burden it creates, never the sender.
+- Keep jokes out of receipts, ratings, trust findings, and limitations.
 
 Funny-mode acceptance test:
 
-1. The reply opens with or contains one comic turn tied to a real receipt from this artifact.
-2. The comic turn would sound out of place in the serious reply. If it would not, the reply is not funny enough.
-3. After the joke, the reply names the minimum concrete revision needed.
-4. Removing the joke leaves a useful, sendable request.
+1. The diagnosis contains one unmistakable comic turn tied to a real receipt.
+2. A colleague understands the joke on the first read.
+3. The joke would sound out of place in the serious diagnosis.
+4. Removing the joke leaves the evidence and recommended action intact.
 
-Bad contrast:
+## Serious readout
 
-- Funny: `Please clarify whether this is a 90-day or six-month pilot and add the requested evidence.`
-- Serious: `Please clarify the pilot duration and add the requested evidence.`
-
-The first version is not funny; it is merely more specific.
-
-Good contrast:
-
-- Funny: `Seriously, bruh? This pilot is 90 days in one sentence and six months in the next. Pick a timeline, then rebuild the recommendation around our Q2 utilization, SLA, and survey data, with the scope, metrics, risks, checkpoint, and a clear go or no-go. And please remove the offer to make slides; the memo is not its own chatbot.`
-- Serious: `Please resolve the conflicting pilot durations and rebuild the recommendation around our Q2 utilization, SLA, and survey data. Include the scope, metrics, risks, checkpoint, and a clear go or no-go, and remove the closing presentation offer.`
+Use direct, neutral workplace language. Preserve the same verdict, receipts, trust findings, and recommended action. Remove the joke without softening the evidence.
 
 ## Plain-language boundary
 
-Use `Human delta` as the named concept in the verdict table: it means what the person contributed beyond the obvious generated answer. Do not use it inside the diagnosis or draft reply.
+Use `Human delta` as the named concept in the verdict table: it means what the person contributed beyond the obvious generated answer. Keep it out of the diagnosis and any optional send-back version.
 
 Translate the remaining internal labels:
 
@@ -52,61 +42,23 @@ Translate the remaining internal labels:
 - `evidence-backed path` → say `choose one option and show us why`
 - `decision-ready recommendation` → say `recommend one option and tell us what decision you need`
 
-Explain the human-delta rating with concrete facts, judgment, or decisions from the document. For every other phrase, if a colleague would have to ask what it means, rewrite it before rendering. Prefer verbs and concrete nouns: `choose`, `show`, `name`, `cut`, `verify`, `owner`, `date`, `cost`, and `result`.
+Prefer concrete verbs and nouns such as `choose`, `show`, `name`, `cut`, `verify`, `owner`, `date`, `cost`, and `result`.
 
-## Serious mode
+## Optional send-back versions
 
-Use direct, neutral workplace language. Preserve the same verdict, receipts, and requested revision. Remove jokes rather than euphemizing the evidence.
+The initial workslop readout does not include an outbound message. After a result that calls for compression, judgment, or revision, offer to turn the readout into one of these formats:
 
-## Draft-reply requirements
+- **Short Slack or Teams reply:** one to three sentences with the main failure and the minimum revision needed.
+- **Professional revision request:** a neutral workplace message that names the evidence, decision, or cleanup required.
+- **Blunt “Seriously, bruh?” version:** one obvious joke tied to a receipt, followed by the same concrete request.
 
-- **ACCEPT:** No draft unless requested.
-- **REQUEST_COMPRESSION:** Name the useful thinking, specify the shorter shape, and request the decision or action first.
-- **REQUEST_JUDGMENT:** Ask for the sender's recommendation, verification, constraints, tradeoffs, or other missing human delta relevant to the assignment.
-- **RETURN_FOR_REVISION:** State what work remains with the reader and list the minimum components required in the revision.
-- **REQUEST_CONTEXT:** Ask for the original assignment or missing source. Do not accuse.
+Wait for the user to choose a format before drafting it. If the user requested a reply in the original request, that counts as the choice; draft only the requested format.
 
-Do not offer to rewrite the document for the recipient.
+Every optional version must:
 
-## Funny draft-reply bank
+- preserve the readout's actual receipts and recommended action;
+- use ordinary workplace language rather than rubric terms;
+- remain safe for the user to review and send; and
+- avoid rewriting the sender's document or doing the work it omitted.
 
-Use these as patterns, not canned text. Preserve the document's real nouns, evidence, decisions, and requested action. Select no more than one joke and make the revision request concrete. A pattern must be customized enough that its joke could not be pasted onto an unrelated document.
-
-### Request compression
-
-- `There is a useful memo inside this memo. Please move the recommendation and next action to the top, then cut the background that does not change either one.`
-- `The answer arrived, but it brought an entourage. Please reduce this to the decision, the two reasons supporting it, and the action required from the reader.`
-- `The signal is good; it is currently traveling with several carry-on bags. Please keep the evidence that affects the recommendation and remove the rest.`
-- `This has earned a page, not a small republic. Please lead with the proposed decision and compress the supporting material to the facts leadership actually needs.`
-
-### Request judgment
-
-- `The options are all present and accounted for; the recommendation appears to have missed the meeting. Please tell us which option you support and what tradeoff you are accepting.`
-- `This gives us a menu when the assignment called for an order. Please name your recommendation, the evidence behind it, and the condition that would change your mind.`
-- `The facts are here, but they have not yet been introduced to a point of view. Please add your conclusion and explain why it beats the strongest alternative.`
-- `The document has successfully preserved every possibility, including the possibility of making no decision. Please choose a path and identify what we should stop, start, or fund.`
-- `This is a capable tour of the territory. We still need a guide who points somewhere. Please state the priority, owner, and success threshold you recommend.`
-
-### Return for revision
-
-- `Seriously, bruh? The document recommends [duration A] and [duration B]. Pick one, show the evidence that supports it, and tell us exactly what decision you need. [Remove any confirmed drafting residue.]`
-- `Be so for real. This asks the reader to verify the numbers, reconcile the plan, and make the recommendation. Please do those three things before sending it back.`
-- `Did the memo write this memo? Please remove the chatbot leftovers, resolve the conflicting recommendations, and rebuild it around the facts the assignment actually requested.`
-- `The reader has been assigned the thinking. Please choose one option, show us the facts that support it, name the main downside, and tell us who does what next.`
-- `The formatting is ready for work; the decision is still in draft mode. Please revise with the actual call, the facts that support it, and what you need the recipient to do.`
-- `Several strategic pillars entered the document; none volunteered to carry a decision. Please return with one or two concrete bets, owners, timing, and what will not be pursued.`
-- `This currently transfers the work from the sender's screen to the reader's afternoon. Please compare the options, check the important claims, and tell us which one you recommend before resending.`
-- `The document covers the waterfront and leaves the recipient holding the mop. Please narrow it to the problem, your judgment, the supporting evidence, and the requested decision.`
-
-### AI paste residue
-
-- `The chatbot packaging is still attached. Please remove the assistant offer at the end, check the document for any other drafting residue, and resend the reviewed version.`
-- `A little assembly language made it into the finished product. Please remove the prompt fragment, verify the surrounding section, and confirm the document has had a human final pass.`
-- `The draft has left its backstage directions onstage. Please remove the editing instruction, resolve any unfinished fields, and resend only the reader-facing document.`
-- `This may contain useful work, but it arrived with the scaffolding still up. Please clear the model disclaimer and unresolved placeholders, then verify that every remaining sentence belongs in the final.`
-
-### Request context
-
-- `I have the answer but not the question, which makes this less a review and more an archaeological dig. Please send the original assignment and intended reader so I can assess whether this does the job.`
-- `This document may be exactly right for a request I cannot see. Please share the original brief, required decision, and audience before we put it on trial.`
-- `Before declaring this work or workslop, I need the missing half of the experiment. Please send the assignment, source material, and expected outcome.`
+Return the message as a draft. Never send it.

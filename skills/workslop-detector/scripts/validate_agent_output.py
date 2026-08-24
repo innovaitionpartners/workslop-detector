@@ -46,8 +46,6 @@ ARBITER_KEYS = {
     "funny_diagnosis",
     "serious_diagnosis",
     "recommended_action",
-    "funny_reply",
-    "serious_reply",
     "limitations",
 }
 
@@ -68,8 +66,6 @@ ACTIONS = {
 READER_FACING_KEYS = (
     "funny_diagnosis",
     "serious_diagnosis",
-    "funny_reply",
-    "serious_reply",
 )
 FORBIDDEN_READER_TERMS = (
     "human delta",
@@ -187,7 +183,7 @@ def validate_rating_object(
 
 def validate_arbiter(data: dict[str, Any]) -> None:
     require_exact_keys(data, ARBITER_KEYS)
-    for key in ("target_reader", "funny_diagnosis", "serious_diagnosis", "funny_reply", "serious_reply"):
+    for key in ("target_reader", "funny_diagnosis", "serious_diagnosis"):
         require_string(data, key)
     for key in READER_FACING_KEYS:
         lowered = data[key].casefold()
@@ -286,15 +282,6 @@ def validate_arbiter(data: dict[str, Any]) -> None:
             f"recommended_action must be {expected_action} for {verdict} with {rating}/{burden}"
         )
 
-    action = data["recommended_action"]
-    if action == "ACCEPT":
-        if data["funny_reply"] or data["serious_reply"]:
-            raise ContractError("reply fields must be empty for ACCEPT")
-    else:
-        if not data["funny_reply"].strip() or not data["serious_reply"].strip():
-            raise ContractError("both reply fields are required when action is not ACCEPT")
-        if data["funny_reply"].casefold().strip() == data["serious_reply"].casefold().strip():
-            raise ContractError("funny_reply must differ from serious_reply")
 
 
 def parse_args() -> argparse.Namespace:

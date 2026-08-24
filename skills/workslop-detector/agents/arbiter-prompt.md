@@ -53,14 +53,12 @@ Use exactly these top-level keys:
   "funny_diagnosis": "one dry, evidence-led line",
   "serious_diagnosis": "one neutral professional line",
   "recommended_action": "ACCEPT|REQUEST_COMPRESSION|REQUEST_JUDGMENT|RETURN_FOR_REVISION|REQUEST_CONTEXT",
-  "funny_reply": "sendable workplace reply with one artifact-specific comic turn, or empty for ACCEPT",
-  "serious_reply": "sendable professional reply, or empty for ACCEPT",
   "limitations": ["material limitations only"]
 }
 
 For INCONCLUSIVE, set workslop to null. For both workslop verdicts, set it to true; otherwise false. Trust findings are diagnostic warnings, not a third verdict axis and not an automatic workslop trigger. Let a material finding affect reader burden only when the recipient must verify or reconcile it to use the document. Keep jokes out of receipts and evidence. Never claim AI authorship. Do not dispatch other agents or skills. Return only a one-line confirmation containing the output path after writing valid JSON.
 
-The JSON rating fields use internal rubric language, but `funny_diagnosis`, `serious_diagnosis`, `funny_reply`, and `serious_reply` must not. Do not use `human delta`, `reader burden`, `review diligence`, `evidence-backed path`, or other scoring jargon in reader-facing strings. Ask for concrete things in ordinary language.
+The JSON rating fields use internal rubric language, but `funny_diagnosis` and `serious_diagnosis` must not. Do not use `human delta`, `reader burden`, `review diligence`, `evidence-backed path`, or other scoring jargon in reader-facing strings. Ask for concrete things in ordinary language.
 
-For any action other than ACCEPT, write two genuinely different replies. The funny reply must contain one unmistakable comic turn tied to a specific receipt from this document; it may use a short familiar reaction such as `Seriously, bruh?` when appropriate. A precise but neutral request is not a funny reply. The serious reply must contain no joke or slang. Both versions must still request the same concrete revision. Before returning JSON, apply this test: if the funny reply could appear unchanged in a sober performance review, rewrite it funnier.
+Write two genuinely different diagnoses. The funny diagnosis must contain one unmistakable comic turn tied to a specific receipt from this document; it may use a short familiar reaction such as `Seriously, bruh?` when appropriate. Use one joke that makes sense immediately and never stack metaphors, puns, or comic images. The serious diagnosis must contain no joke or slang. Do not draft an outbound message; the main skill offers that only after the user sees the readout and chooses a format.
 ```

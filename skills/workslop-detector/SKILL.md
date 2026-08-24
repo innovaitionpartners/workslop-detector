@@ -6,7 +6,7 @@ description: >-
   response or leaves the recipient to perform the real interpretation,
   verification, or decision work. Use when the user asks "is this workslop,"
   "check for workslop," "did someone paste AI," wants a proof-of-work or
-  human-delta review, or needs a funny or serious return-to-sender draft.
+  human-delta review, or wants a shareable version of a workslop readout.
   Requires the original assignment for a full verdict. Detects unreviewed AI
   paste residue, but does not claim to prove AI authorship and is not a general
   prose-quality checker.
@@ -27,7 +27,7 @@ Scan separately for AI paste residue that indicates the output was not reviewed.
 Read these files before running:
 
 - [verdict-rubric.md](references/verdict-rubric.md) — rating anchors and binding verdict matrix
-- [tone-guide.md](references/tone-guide.md) — funny and serious rendering rules plus the draft-reply bank
+- [tone-guide.md](references/tone-guide.md) — funny and serious readout rules plus opt-in send-back formats
 - [platform-execution.md](references/platform-execution.md) — native delegation mappings and the honest limited fallback
 - [baseline-responder-prompt.md](agents/baseline-responder-prompt.md) — blinded counterfactual worker
 - [cold-reader-prompt.md](agents/cold-reader-prompt.md) — target-recipient burden worker
@@ -139,13 +139,21 @@ Render exactly this structure, omitting `AI residue` when there are no confirmed
 ## Recommended action
 
 <Accept it, request compression, request judgment, return for revision, or request context.>
-
-## Draft reply
-
-> <funny_reply or serious_reply>
 ```
 
-For `NOT_WORKSLOP` with action `ACCEPT`, omit `Draft reply` unless the user explicitly asks for one. In funny mode, end with: `Say “make it serious” for the professional version.` In serious mode, do not mention the funny version.
+For `REQUEST_COMPRESSION`, `REQUEST_JUDGMENT`, or `RETURN_FOR_REVISION`, append this offer after the readout:
+
+```markdown
+## Want a version you can send back?
+
+I can turn this readout into:
+
+- a short Slack or Teams reply
+- a professional revision request
+- a blunt “Seriously, bruh?” version
+```
+
+Do not generate any of those versions until the user chooses one or explicitly asks for a reply. Omit the offer for `ACCEPT` and `REQUEST_CONTEXT`. In funny mode, also offer `Say “make it serious” for the professional readout.`
 
 ## Guardrails
 
@@ -154,8 +162,8 @@ For `NOT_WORKSLOP` with action `ACCEPT`, omit `Draft reply` unless the user expl
 - Treat direct paste residue as a diligence failure, not automatic proof that the whole document is workslop.
 - Treat trust findings as diagnostic warnings, not a third verdict axis. Do not call an unsupported claim false, require formal citations for ordinary internal provenance, or let a minor inconsistency determine workslop.
 - Never claim to prove AI authorship. Say what the document adds, omits, or makes the reader do.
-- Use `Human delta` as the named diagnostic concept in the results table. Keep `reader burden`, `review diligence`, and phrases such as `evidence-backed path` out of rendered output. Do not use any rubric label, including `human delta`, inside the draft reply.
+- Use `Human delta` as the named diagnostic concept in the results table. Keep `reader burden`, `review diligence`, and phrases such as `evidence-backed path` out of rendered output. Do not use any rubric label, including `human delta`, inside an optional send-back version.
 - Roast the artifact and the burden, not the sender. Do not insult competence, motives, or integrity.
-- In funny mode, the draft reply itself must include one unmistakable, artifact-specific comic turn. A funny diagnosis followed by a neutral reply does not satisfy the mode.
-- Return a draft only. Never send a message on the user's behalf.
+- Keep funny mode in the readout. The diagnosis may use one obvious, artifact-specific comic turn; never stack metaphors or make the reader decode the humor.
+- Outbound messages are opt-in drafts. Never generate one without a request or send one on the user's behalf.
 - Do not rewrite the sender's document by default. That completes the work the sender offloaded.
