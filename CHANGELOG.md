@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.3 — Direct readout
+
+- Removed funny mode and forced joke generation from the readout and arbiter contract.
+- Replaced the paired funny and serious diagnoses with one direct, evidence-led diagnosis.
+- Kept send-back drafts opt-in, with short, professional, and blunt formats.
+
 ## 0.1.2 — Opt-in send-back formats
 
 - Removed automatic funny and serious reply generation from the arbiter contract.

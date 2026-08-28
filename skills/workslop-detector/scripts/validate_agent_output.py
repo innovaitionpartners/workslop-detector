@@ -43,8 +43,7 @@ ARBITER_KEYS = {
     "review_diligence",
     "trust_check",
     "receipts",
-    "funny_diagnosis",
-    "serious_diagnosis",
+    "diagnosis",
     "recommended_action",
     "limitations",
 }
@@ -63,10 +62,7 @@ ACTIONS = {
     "RETURN_FOR_REVISION",
     "REQUEST_CONTEXT",
 }
-READER_FACING_KEYS = (
-    "funny_diagnosis",
-    "serious_diagnosis",
-)
+READER_FACING_KEYS = ("diagnosis",)
 FORBIDDEN_READER_TERMS = (
     "human delta",
     "reader burden",
@@ -183,7 +179,7 @@ def validate_rating_object(
 
 def validate_arbiter(data: dict[str, Any]) -> None:
     require_exact_keys(data, ARBITER_KEYS)
-    for key in ("target_reader", "funny_diagnosis", "serious_diagnosis"):
+    for key in ("target_reader", "diagnosis"):
         require_string(data, key)
     for key in READER_FACING_KEYS:
         lowered = data[key].casefold()

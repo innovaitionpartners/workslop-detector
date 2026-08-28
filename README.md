@@ -2,8 +2,6 @@
 
 Workslop Detector checks whether an internal document contains any human judgment or is a bunch of AI-generated junk with minimal refinement.
 
-It is deliberately a little silly.
-
 Disclaimer: Workslop Detector evaluates the document’s usefulness and the work it leaves for the reader. AI authorship is outside its scope.
 
 ## What is workslop?
@@ -32,13 +30,11 @@ A full verdict requires:
 
 Without both, the counterfactual comparison is inconclusive. The detector can still perform a limited readability, trust, and AI-residue review, but it will not pretend that one model context is several independent reviewers.
 
-## Funny mode and serious mode
+## Readout and send-back options
 
-Funny mode is the default. It uses dry, screenshot-worthy language while roasting the artifact and the burden it creates.
+The readout is direct, evidence-led, and written in ordinary workplace language. It does not attempt jokes, metaphors, or a separate funny mode.
 
-Serious mode returns the same judgment and evidence in neutral workplace language. Say “make it serious” or request a professional or HR-safe response.
-
-The readout does not automatically draft a message to the sender. After the verdict, you can ask for a short Slack or Teams reply, a professional revision request, or a blunt “Seriously, bruh?” version.
+It also does not automatically draft a message to the sender. After the verdict, you can ask for a short Slack or Teams reply, a professional revision request, or a blunt direct reply. If you want particular language or slang, ask for it explicitly.
 
 ## Example
 
@@ -55,7 +51,7 @@ The readout does not automatically draft a message to the sender. After the verd
 ```text
 WORKSLOP: YES
 
-Two timelines. Zero requested evidence. One chatbot still offering to make slides. Seriously, bruh?
+The memo gives two conflicting pilot timelines, omits the requested evidence, and still contains an assistant offer to make slides.
 
 Human delta: LOW. The document lacks the requested evidence and a rationale for choosing a pilot.
 Work left for the reader: HIGH. The recipient must resolve the timeline, verify the 30% claim, and design the pilot.
@@ -65,7 +61,7 @@ Want a version you can send back?
 
 - a short Slack or Teams reply
 - a professional revision request
-- a blunt “Seriously, bruh?” version
+- a blunt direct reply
 ```
 
 ## Install the Agent Plugin package

@@ -1,35 +1,10 @@
-# Tone Guide
+# Readout and Send-Back Guide
 
-## Funny readout — default
+## Readout
 
-Use dry, brief, evidence-led humor in the diagnosis. The joke should sharpen one specific receipt from the document, not replace the evidence.
+Use direct, neutral workplace language. Lead with the most important document-grounded finding, then preserve the verdict, receipts, trust findings, and recommended action without softening the evidence.
 
-Good shapes:
-
-- `A human was here.`
-- `1,842 words entered. No recommendation emerged.`
-- `The chatbot packaging is still attached.`
-- `Two timelines. Zero requested evidence. Seriously, bruh?`
-
-Rules:
-
-- Use at most one joke in the diagnosis.
-- Prefer an observable contradiction or revealing count over a metaphor.
-- Short reactions such as `Seriously, bruh?` or `Be so for real.` are allowed when they fit the evidence.
-- The joke must make sense immediately. Do not stack metaphors, puns, or comic images.
-- Roast the document and the burden it creates, never the sender.
-- Keep jokes out of receipts, ratings, trust findings, and limitations.
-
-Funny-mode acceptance test:
-
-1. The diagnosis contains one unmistakable comic turn tied to a real receipt.
-2. A colleague understands the joke on the first read.
-3. The joke would sound out of place in the serious diagnosis.
-4. Removing the joke leaves the evidence and recommended action intact.
-
-## Serious readout
-
-Use direct, neutral workplace language. Preserve the same verdict, receipts, trust findings, and recommended action. Remove the joke without softening the evidence.
+Do not create a funny mode or attempt jokes, metaphors, puns, comic images, slang, theatrical outrage, or a humorous persona. The detector's job is to make the failure obvious, not to perform a voice.
 
 ## Plain-language boundary
 
@@ -50,9 +25,11 @@ The initial workslop readout does not include an outbound message. After a resul
 
 - **Short Slack or Teams reply:** one to three sentences with the main failure and the minimum revision needed.
 - **Professional revision request:** a neutral workplace message that names the evidence, decision, or cleanup required.
-- **Blunt “Seriously, bruh?” version:** one obvious joke tied to a receipt, followed by the same concrete request.
+- **Blunt direct reply:** a concise, plainspoken reaction followed by the same concrete request.
 
 Wait for the user to choose a format before drafting it. If the user requested a reply in the original request, that counts as the choice; draft only the requested format.
+
+Do not invent humor for the blunt version. If the user explicitly supplies or requests language such as `Seriously, bruh?`, use it once and move directly to the specific problem and requested fix.
 
 Every optional version must:
 
