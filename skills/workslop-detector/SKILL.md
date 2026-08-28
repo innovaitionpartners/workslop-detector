@@ -22,12 +22,12 @@ Judge the work, not whether a machine touched it. Base the verdict on two primar
 1. **Human delta:** What does the submission add beyond two blinded agents answering the same assignment?
 2. **Reader burden:** Can the intended recipient understand and use it without doing disproportionate compression, verification, or decision work?
 
-Scan separately for AI paste residue that indicates the output was not reviewed. Also run a trust check for consequential claims with no identifiable source and contradictions inside the document. Use funny, dry verdict language by default; switch the entire result to serious language when the user asks.
+Scan separately for AI paste residue that indicates the output was not reviewed. Also run a trust check for consequential claims with no identifiable source and contradictions inside the document. Render the result directly in ordinary workplace language.
 
 Read these files before running:
 
 - [verdict-rubric.md](references/verdict-rubric.md) — rating anchors and binding verdict matrix
-- [tone-guide.md](references/tone-guide.md) — funny and serious readout rules plus opt-in send-back formats
+- [tone-guide.md](references/tone-guide.md) — readout language and opt-in send-back formats
 - [platform-execution.md](references/platform-execution.md) — native delegation mappings and the honest limited fallback
 - [baseline-responder-prompt.md](agents/baseline-responder-prompt.md) — blinded counterfactual worker
 - [cold-reader-prompt.md](agents/cold-reader-prompt.md) — target-recipient burden worker
@@ -52,10 +52,9 @@ I need the original assignment to test whether this adds anything beyond the obv
 I can still check readability and leftover AI paste language without it if you want.
 ```
 
-Treat target reader and tone as optional:
+Treat the target reader as optional:
 
 - Infer the target reader from explicit context; otherwise use `internal colleague who is informed but not immersed in the work` and display that assumption.
-- Default to `funny`. Use `serious` when the user asks for a professional, sober, HR-safe, or serious response.
 
 ## Run the analysis
 
@@ -113,7 +112,7 @@ Render exactly this structure, omitting `AI residue` when there are no confirmed
 ```markdown
 # WORKSLOP: <YES | NO | INCONCLUSIVE>
 
-> <funny_diagnosis or serious_diagnosis>
+> <diagnosis>
 
 | Test | Result |
 |---|---|
@@ -150,10 +149,10 @@ I can turn this readout into:
 
 - a short Slack or Teams reply
 - a professional revision request
-- a blunt “Seriously, bruh?” version
+- a blunt direct reply
 ```
 
-Do not generate any of those versions until the user chooses one or explicitly asks for a reply. Omit the offer for `ACCEPT` and `REQUEST_CONTEXT`. In funny mode, also offer `Say “make it serious” for the professional readout.`
+Do not generate any of those versions until the user chooses one or explicitly asks for a reply. Omit the offer for `ACCEPT` and `REQUEST_CONTEXT`.
 
 ## Guardrails
 
@@ -163,7 +162,7 @@ Do not generate any of those versions until the user chooses one or explicitly a
 - Treat trust findings as diagnostic warnings, not a third verdict axis. Do not call an unsupported claim false, require formal citations for ordinary internal provenance, or let a minor inconsistency determine workslop.
 - Never claim to prove AI authorship. Say what the document adds, omits, or makes the reader do.
 - Use `Human delta` as the named diagnostic concept in the results table. Keep `reader burden`, `review diligence`, and phrases such as `evidence-backed path` out of rendered output. Do not use any rubric label, including `human delta`, inside an optional send-back version.
-- Roast the artifact and the burden, not the sender. Do not insult competence, motives, or integrity.
-- Keep funny mode in the readout. The diagnosis may use one obvious, artifact-specific comic turn; never stack metaphors or make the reader decode the humor.
+- Keep the readout direct and evidence-led. Do not invent jokes, metaphors, slang, or a humorous persona.
+- If the user explicitly requests particular language or slang, use only what they requested and keep the underlying revision request concrete. Do not insult competence, motives, or integrity.
 - Outbound messages are opt-in drafts. Never generate one without a request or send one on the user's behalf.
 - Do not rewrite the sender's document by default. That completes the work the sender offloaded.

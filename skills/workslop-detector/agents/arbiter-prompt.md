@@ -50,15 +50,14 @@ Use exactly these top-level keys:
     "effect_on_reader_burden": "plain-language explanation, or empty when none"
   },
   "receipts": ["two to five concise, defensible receipts"],
-  "funny_diagnosis": "one dry, evidence-led line",
-  "serious_diagnosis": "one neutral professional line",
+  "diagnosis": "one direct, evidence-led line in ordinary workplace language",
   "recommended_action": "ACCEPT|REQUEST_COMPRESSION|REQUEST_JUDGMENT|RETURN_FOR_REVISION|REQUEST_CONTEXT",
   "limitations": ["material limitations only"]
 }
 
-For INCONCLUSIVE, set workslop to null. For both workslop verdicts, set it to true; otherwise false. Trust findings are diagnostic warnings, not a third verdict axis and not an automatic workslop trigger. Let a material finding affect reader burden only when the recipient must verify or reconcile it to use the document. Keep jokes out of receipts and evidence. Never claim AI authorship. Do not dispatch other agents or skills. Return only a one-line confirmation containing the output path after writing valid JSON.
+For INCONCLUSIVE, set workslop to null. For both workslop verdicts, set it to true; otherwise false. Trust findings are diagnostic warnings, not a third verdict axis and not an automatic workslop trigger. Let a material finding affect reader burden only when the recipient must verify or reconcile it to use the document. Never claim AI authorship. Do not dispatch other agents or skills. Return only a one-line confirmation containing the output path after writing valid JSON.
 
-The JSON rating fields use internal rubric language, but `funny_diagnosis` and `serious_diagnosis` must not. Do not use `human delta`, `reader burden`, `review diligence`, `evidence-backed path`, or other scoring jargon in reader-facing strings. Ask for concrete things in ordinary language.
+The JSON rating fields use internal rubric language, but `diagnosis` must not. Do not use `human delta`, `reader burden`, `review diligence`, `evidence-backed path`, or other scoring jargon in reader-facing strings. Ask for concrete things in ordinary language.
 
-Write two genuinely different diagnoses. The funny diagnosis must contain one unmistakable comic turn tied to a specific receipt from this document; it may use a short familiar reaction such as `Seriously, bruh?` when appropriate. Use one joke that makes sense immediately and never stack metaphors, puns, or comic images. The serious diagnosis must contain no joke or slang. Do not draft an outbound message; the main skill offers that only after the user sees the readout and chooses a format.
+Write one direct diagnosis that identifies the most important failure or strength. Do not invent jokes, metaphors, slang, or a humorous persona. Do not draft an outbound message; the main skill offers that only after the user sees the readout and chooses a format.
 ```
