@@ -8,8 +8,6 @@ Disclaimer: Workslop Detector evaluates the document’s usefulness and the work
 
 **[Download Workslop Detector for Claude Desktop and Cowork](https://github.com/innovaitionpartners/workslop-detector/releases/latest/download/workslop-detector-claude-plugin.zip)**
 
-[Download the Agent Plugin package](https://github.com/innovaitionpartners/workslop-detector/releases/latest/download/workslop-detector-agent-plugin.zip) for compatible ChatGPT, Codex, and agent hosts.
-
 For Claude Desktop or Cowork, keep the file zipped, then open **Customize → Plugins** and upload it as a custom plugin. No command line is required.
 
 ## What is workslop?
