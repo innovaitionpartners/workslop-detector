@@ -22,21 +22,28 @@ jobs:
           python-version: "3.13"
 
       - name: Validate and build deterministic packages
-        run: python3 scripts/build_packages.py
+        run: |
+          python3 -m unittest conformance.test_build_packages
+          python3 scripts/build_packages.py
 
       - name: Add stable one-click download names
         run: |
           agent_archive=$(find dist -maxdepth 1 -type f -name 'workslop-detector-agent-plugin-[0-9]*.zip' -print -quit)
           claude_archive=$(find dist -maxdepth 1 -type f -name 'workslop-detector-claude-plugin-[0-9]*.zip' -print -quit)
+          cowork_archive=$(find dist -maxdepth 1 -type f -name 'workslop-detector-cowork-skill-[0-9]*.zip' -print -quit)
           test -n "$agent_archive"
           test -n "$claude_archive"
+          test -n "$cowork_archive"
           cp "$agent_archive" dist/workslop-detector-agent-plugin.zip
           cp "$claude_archive" dist/workslop-detector-claude-plugin.zip
+          cp "$cowork_archive" dist/workslop-detector.zip
 
       - name: Verify archive contents
         run: |
           python3 -m zipfile --test dist/workslop-detector-agent-plugin-*.zip
           python3 -m zipfile --test dist/workslop-detector-claude-plugin-*.zip
+          python3 -m zipfile --test dist/workslop-detector-cowork-skill-*.zip
+          python3 -m zipfile --test dist/workslop-detector.zip
 
       - name: Write checksums
         run: sha256sum dist/*.zip > dist/SHA256SUMS.txt

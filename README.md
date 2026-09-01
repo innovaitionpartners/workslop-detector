@@ -6,9 +6,9 @@ Disclaimer: Workslop Detector evaluates the document’s usefulness and the work
 
 ## Download
 
-**[Download Workslop Detector for Claude Desktop and Cowork](https://github.com/innovaitionpartners/workslop-detector/releases/latest/download/workslop-detector-claude-plugin.zip)**
+**[Download Workslop Detector for Claude and Cowork](https://github.com/innovaitionpartners/workslop-detector/releases/latest/download/workslop-detector.zip)**
 
-For Claude Desktop or Cowork, keep the file zipped, then open **Customize → Plugins** and upload it as a custom plugin. No command line is required.
+Keep the file zipped. In Claude, open **Customize → Skills**, select **+ → Create skill → Upload a skill**, and choose the ZIP. No command line is required.
 
 ## What is workslop?
 
@@ -70,7 +70,7 @@ Want a version you can send back?
 - a blunt direct reply
 ```
 
-## Install the Agent Plugin package
+## Technical: Agent Plugin package
 
 Download the [current Agent Plugin ZIP](https://github.com/innovaitionpartners/workslop-detector/releases/latest/download/workslop-detector-agent-plugin.zip). The versioned archive is named:
 
@@ -82,30 +82,30 @@ It contains the current `.codex-plugin/plugin.json` format and the shared skill 
 
 [OpenAI’s current plugin overview and installation guidance](https://help.openai.com/en/articles/20001256)
 
-## Install the Claude and Cowork package
+## Install the Claude and Cowork skill
 
-Download the [current Claude and Cowork ZIP](https://github.com/innovaitionpartners/workslop-detector/releases/latest/download/workslop-detector-claude-plugin.zip). The versioned archive is named:
+Download the [current Claude and Cowork skill ZIP](https://github.com/innovaitionpartners/workslop-detector/releases/latest/download/workslop-detector.zip). The versioned archive is named:
 
 ```text
-workslop-detector-claude-plugin-<version>.zip
+workslop-detector-cowork-skill-<version>.zip
 ```
 
-In Claude Desktop or Cowork:
+In Claude:
 
 1. Open **Customize** in the left sidebar.
-2. Open **Plugins**.
-3. Choose the option to upload a custom plugin file.
-4. Select the Claude ZIP.
-5. Start a new Cowork task and invoke Workslop Detector from `/` or `+`.
+2. Open **Skills**.
+3. Select **+**, then **Create skill**.
+4. Choose **Upload a skill** and select the ZIP without unzipping it.
+5. Start a new chat or Cowork task and invoke Workslop Detector from `/` or `+`.
 
-Cowork is the Claude surface for the full subagent panel. Claude chat can load bundled skills, but Anthropic currently limits plugin subagents to Cowork.
+Cowork is the Claude surface for the full parallel-review workflow.
 
-[Anthropic’s current plugin installation guidance](https://support.claude.com/en/articles/13837440-use-plugins-in-claude)
+[Anthropic’s current skill installation guidance](https://support.claude.com/en/articles/12512180-use-skills-in-claude)
 
 ## Privacy and safety
 
 - Workslop Detector relies entirely on your selected AI host, which processes the assignment, document, and reviewer outputs under its terms and workspace controls.
-- The plugin generates an outbound draft only when you request one. It never sends messages or changes the submitted document.
+- The skill generates an outbound draft only when you request one. It never sends messages or changes the submitted document.
 - The trust check does not browse or externally fact-check claims.
 
 ## Limitations
