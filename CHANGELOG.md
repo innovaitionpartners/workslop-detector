@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.4 — Cowork skill upload
+
+- Added a Cowork-ready skill ZIP with one top-level `workslop-detector/` folder and `SKILL.md` directly inside it.
+- Changed the public Claude download and instructions from plugin upload to **Customize → Skills → Upload a skill**.
+- Kept plugin-format archives as technical release artifacts rather than the consumer download.
+
 ## 0.1.3 — Direct readout
 
 - Removed funny mode and forced joke generation from the readout and arbiter contract.

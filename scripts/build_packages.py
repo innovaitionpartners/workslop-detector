@@ -155,6 +155,20 @@ def _write_archive(root: Path, destination: Path, files: set[Path]) -> None:
             archive.writestr(info, (root / relative).read_bytes())
 
 
+def _write_cowork_skill_archive(root: Path, destination: Path) -> set[Path]:
+    files = {Path(PLUGIN_NAME) / relative for relative in RUNTIME_FILES}
+    with zipfile.ZipFile(destination, "w", compression=zipfile.ZIP_DEFLATED) as archive:
+        for relative in sorted(RUNTIME_FILES, key=lambda item: item.as_posix()):
+            name = (Path(PLUGIN_NAME) / relative).as_posix()
+            validate_archive_name(name)
+            info = zipfile.ZipInfo(name, date_time=ZIP_TIMESTAMP)
+            info.compress_type = zipfile.ZIP_DEFLATED
+            info.create_system = 3
+            info.external_attr = 0o100644 << 16
+            archive.writestr(info, (root / RUNTIME_ROOT / relative).read_bytes())
+    return files
+
+
 def _validate_archive(path: Path, expected: set[Path]) -> None:
     expected_names = sorted(item.as_posix() for item in expected)
     with zipfile.ZipFile(path) as archive:
@@ -171,7 +185,7 @@ def _validate_archive(path: Path, expected: set[Path]) -> None:
             raise PackageError(f"Corrupt member in {path.name}: {bad_member}")
 
 
-def build_archives(root: Path, output_dir: Path) -> tuple[Path, Path]:
+def build_archives(root: Path, output_dir: Path) -> tuple[Path, Path, Path]:
     root = root.resolve()
     output_dir = output_dir.resolve()
     version, _ = validate_source_tree(root)
@@ -181,6 +195,7 @@ def build_archives(root: Path, output_dir: Path) -> tuple[Path, Path]:
         package_type: f"{PLUGIN_NAME}-{package_type}-{version}.zip"
         for package_type in MANIFESTS
     }
+    names["cowork-skill"] = f"{PLUGIN_NAME}-cowork-skill-{version}.zip"
     with tempfile.TemporaryDirectory(prefix=".workslop-build-", dir=output_dir) as tmp:
         temp_dir = Path(tmp)
         temporary: dict[str, Path] = {}
@@ -191,13 +206,22 @@ def build_archives(root: Path, output_dir: Path) -> tuple[Path, Path]:
             _validate_archive(path, files)
             temporary[package_type] = path
 
+        cowork_path = temp_dir / names["cowork-skill"]
+        cowork_files = _write_cowork_skill_archive(root, cowork_path)
+        _validate_archive(cowork_path, cowork_files)
+        temporary["cowork-skill"] = cowork_path
+
         completed: dict[str, Path] = {}
-        for package_type in MANIFESTS:
+        for package_type in (*MANIFESTS, "cowork-skill"):
             destination = output_dir / names[package_type]
             os.replace(temporary[package_type], destination)
             completed[package_type] = destination
 
-    return completed["agent-plugin"], completed["claude-plugin"]
+    return (
+        completed["agent-plugin"],
+        completed["claude-plugin"],
+        completed["cowork-skill"],
+    )
 
 
 def sha256(path: Path) -> str:
