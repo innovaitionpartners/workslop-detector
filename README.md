@@ -66,7 +66,7 @@ Want a version you can send back?
 
 ## Install the Agent Plugin package
 
-The canonical release archive is:
+Download the current packages from the [latest GitHub release](https://github.com/innovaitionpartners/workslop-detector/releases/latest). The Agent Plugin archive is:
 
 ```text
 workslop-detector-agent-plugin-<version>.zip
@@ -78,7 +78,7 @@ It contains the current `.codex-plugin/plugin.json` format and the shared skill 
 
 ## Install the Claude and Cowork package
 
-The Claude-specific release archive is:
+Download the current packages from the [latest GitHub release](https://github.com/innovaitionpartners/workslop-detector/releases/latest). The Claude-specific archive is:
 
 ```text
 workslop-detector-claude-plugin-<version>.zip
