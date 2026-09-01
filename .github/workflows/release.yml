@@ -24,6 +24,15 @@ jobs:
       - name: Validate and build deterministic packages
         run: python3 scripts/build_packages.py
 
+      - name: Add stable one-click download names
+        run: |
+          agent_archive=$(find dist -maxdepth 1 -type f -name 'workslop-detector-agent-plugin-[0-9]*.zip' -print -quit)
+          claude_archive=$(find dist -maxdepth 1 -type f -name 'workslop-detector-claude-plugin-[0-9]*.zip' -print -quit)
+          test -n "$agent_archive"
+          test -n "$claude_archive"
+          cp "$agent_archive" dist/workslop-detector-agent-plugin.zip
+          cp "$claude_archive" dist/workslop-detector-claude-plugin.zip
+
       - name: Verify archive contents
         run: |
           python3 -m zipfile --test dist/workslop-detector-agent-plugin-*.zip

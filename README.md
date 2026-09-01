@@ -4,6 +4,14 @@ Workslop Detector checks whether an internal document contains any human judgmen
 
 Disclaimer: Workslop Detector evaluates the document’s usefulness and the work it leaves for the reader. AI authorship is outside its scope.
 
+## Download
+
+**[Download Workslop Detector for Claude Desktop and Cowork](https://github.com/innovaitionpartners/workslop-detector/releases/latest/download/workslop-detector-claude-plugin.zip)**
+
+[Download the Agent Plugin package](https://github.com/innovaitionpartners/workslop-detector/releases/latest/download/workslop-detector-agent-plugin.zip) for compatible ChatGPT, Codex, and agent hosts.
+
+For Claude Desktop or Cowork, keep the file zipped, then open **Customize → Plugins** and upload it as a custom plugin. No command line is required.
+
 ## What is workslop?
 
 Workslop is a plan, memo, strategy, analysis, brief, or other internal document that adds little beyond the obvious AI response or leaves the job of distillation to the recipient.
@@ -66,7 +74,7 @@ Want a version you can send back?
 
 ## Install the Agent Plugin package
 
-Download the current packages from the [latest GitHub release](https://github.com/innovaitionpartners/workslop-detector/releases/latest). The Agent Plugin archive is:
+Download the [current Agent Plugin ZIP](https://github.com/innovaitionpartners/workslop-detector/releases/latest/download/workslop-detector-agent-plugin.zip). The versioned archive is named:
 
 ```text
 workslop-detector-agent-plugin-<version>.zip
@@ -78,7 +86,7 @@ It contains the current `.codex-plugin/plugin.json` format and the shared skill 
 
 ## Install the Claude and Cowork package
 
-Download the current packages from the [latest GitHub release](https://github.com/innovaitionpartners/workslop-detector/releases/latest). The Claude-specific archive is:
+Download the [current Claude and Cowork ZIP](https://github.com/innovaitionpartners/workslop-detector/releases/latest/download/workslop-detector-claude-plugin.zip). The versioned archive is named:
 
 ```text
 workslop-detector-claude-plugin-<version>.zip
