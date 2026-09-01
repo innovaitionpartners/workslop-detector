@@ -1,0 +1,45 @@
+name: Publish plugin packages
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+
+      - name: Validate and build deterministic packages
+        run: python3 scripts/build_packages.py
+
+      - name: Verify archive contents
+        run: |
+          python3 -m zipfile --test dist/workslop-detector-agent-plugin-*.zip
+          python3 -m zipfile --test dist/workslop-detector-claude-plugin-*.zip
+
+      - name: Write checksums
+        run: sha256sum dist/*.zip > dist/SHA256SUMS.txt
+
+      - name: Publish GitHub release
+        if: github.ref_type == 'tag'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "${{ github.ref_name }}" \
+            dist/*.zip \
+            dist/SHA256SUMS.txt \
+            --generate-notes \
+            --title "Workslop Detector ${{ github.ref_name }}" \
+            --verify-tag
